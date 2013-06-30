@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Force for Yii
 
 ...is a module for the Yii PHP framework allowing the user to generate Models and CRUD controllers and views for Force.com sObjects using the Force.com REST API.
@@ -59,3 +60,9 @@ options.
 
     /* sends GET to http://api.example.com/person/1 and populates a single Person model*/
     $person=Person::model()->findById(1);
+=======
+YiiForce
+========
+
+Yii Framework Force.com gii
+>>>>>>> a495ddb571ffed6da8f9e917e329a32f7676b9fd
