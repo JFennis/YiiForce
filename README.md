@@ -7,6 +7,10 @@ cache should be configured to prevent excessive API calls (see Install instructi
 This module provides gii code generation for standard CRUD actions on Force.com sObjects. The SOQL Query builder works for the standard generated MVC files but still requires development and testing for more
 advanced query options. 
 
+##Requirements
+* Yii 1.1
+* PHP 5.3
+
 
 ##Install Instructions:
 1. Add the 'force' module to Yii by placing it in your application's module folder (for example '/protected/modules').
