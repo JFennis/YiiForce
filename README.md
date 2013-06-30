@@ -8,7 +8,6 @@ options.
 
 
 ##INSTALL:
-
 1.) Add the 'force' module to Yii by placing it in your application's module folder (for example '/protected/modules')
 2.) configure a remote application in your Force.com Org see https://help.salesforce.com/help/doc/en/remoteaccess_define.htm
 3.) Edit your applications main.php config file and add the configuration for the force module
@@ -43,7 +42,8 @@ options.
             'autoCreateCacheTable'=>TRUE,
         ),
 
-5.) Use the Force.com gii to generate the Model and CRUD Controllers and Views.
+5.) Navigate to the force module http://your-yii-site/index.php/force
+6.) Use the Force.com gii to generate the Model and CRUD Controllers and Views.
 
 ##QUICK OVERVIEW:
 
