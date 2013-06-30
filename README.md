@@ -8,9 +8,11 @@ options.
 
 
 ##INSTALL:
-1.) Add the 'force' module to Yii by placing it in your application's module folder (for example '/protected/modules').
-2.) configure a remote application in your Force.com Org see https://help.salesforce.com/help/doc/en/remoteaccess_define.htm.
-3.) Edit your applications main.php config file and add the configuration for the force module
+1. Add the 'force' module to Yii by placing it in your application's module folder (for example '/protected/modules').
+
+2. configure a remote application in your Force.com Org see https://help.salesforce.com/help/doc/en/remoteaccess_define.htm.
+
+3. Edit your applications main.php config file and add the configuration for the force module
 ~~~
        'force'=>array(
             'modules'=>array(
@@ -34,7 +36,8 @@ options.
              ),
         ),
 ~~~    		
-4.) Configure a cache in the main.php components section as the example shown below
+
+4. Configure a cache in the main.php components section as the example shown below
 ~~~
         'forceCache'=>array(
             'class'=>'system.caching.CDbCache',
@@ -42,28 +45,9 @@ options.
             'autoCreateCacheTable'=>TRUE,
         ),
 ~~~
-5.) Navigate to the force module http://your-yii-site/index.php/force
-6.) Use the Force.com gii to generate the Model and CRUD Controllers and Views.
 
-#### [Download](https://github.com/JFennis/YiiForce)
+5. Navigate to the force module http://your-yii-site/index.php/force.
 
-##QUICK OVERVIEW:
+6. Use the Force.com gii to generate the Model and CRUD Controllers and Views.
 
-~~~
 
-     class Person extends EActiveResource
- 
-~~~
-
-##Usage:
-
-~~~
-
-    /* sends GET to http://api.example.com/person/1 and populates a single Person model*/
-    $person=Person::model()->findById(1);
-=======
-YiiForce
-========
-
-Yii Framework Force.com gii
->>>>>>> a495ddb571ffed6da8f9e917e329a32f7676b9fd
