@@ -56,4 +56,5 @@ advanced query options.
 
 
 ##Tips:
-* You may need to update the gii ipFilters if you are not hosting your application locally. You can go to http://www.whatismyip.com/ to get you current ip address. 
+* You may need to update the gii ipFilters if you are not hosting your application locally, in which case you may see Error 403 - You are not allowed to access this page.
+ You can go to http://www.whatismyip.com/ to get you current ip address. 
