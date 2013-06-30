@@ -8,8 +8,8 @@ This module provides gii code generation for standard CRUD actions on Force.com 
 advanced query options. 
 
 ##Requirements
-* Yii 1.1
-* PHP 5.3
+* Yii Framework 1.1 or above
+* PHP 5.3 or above
 
 
 ##Install Instructions:
