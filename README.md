@@ -4,7 +4,7 @@
 cache should be configured to prevent excessive API calls (see Install instructions below).
 
 ##Note:
-This module provides gii code generation for standard CRUD actions on Force.com sObjects. The SOQL Query builder works for the gii MVC files but still requires development and testing for more
+This module provides gii code generation for standard CRUD actions on Force.com sObjects. The SOQL Query builder works for the standard generated MVC files but still requires development and testing for more
 advanced query options. 
 
 
@@ -55,3 +55,5 @@ advanced query options.
 6. Use the Force.com gii to generate the Model and CRUD Controllers and Views.
 
 
+##Tips:
+* You may need to update the gii ipFilters if you are not hosting your application locally. You can go to http://www.whatismyip.com/ to get you current ip address. 
