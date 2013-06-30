@@ -1,19 +1,22 @@
 #Yii Force
 
-...is a module for the Yii PHP framework allowing the user to generate Models and CRUD Controllers and Views for Force.com sObjects using the Force.com REST API.
+...is a module for the Yii PHP framework that allows the user to generate Models and CRUD Controllers/Views for Force.com sObjects. CRUD operations utilise the Force.com REST API, and a
+cache should be configured to prevent excessive API calls (see Install instructions below).
 
-##HINT:
-CAUTION: This module provides gii code generation for Force.com sObjects. The SOQL Query builder works for the gii MVC files but still requires development and testing for more advanced query
-options. 
+##Note:
+This module provides gii code generation for standard CRUD actions on Force.com sObjects. The SOQL Query builder works for the gii MVC files but still requires development and testing for more
+advanced query options. 
 
 
-##INSTALL:
+##Install Instructions:
 1. Add the 'force' module to Yii by placing it in your application's module folder (for example '/protected/modules').
 
-2. configure a remote application in your Force.com Org see https://help.salesforce.com/help/doc/en/remoteaccess_define.htm.
+2. Configure a remote application in your Force.com Org as shown at https://help.salesforce.com/help/doc/en/remoteaccess_define.htm.
 
 3. Edit your applications main.php config file and add the configuration for the force module
-~~~
+~~~PHP
+    'modules'=>array(
+
        'force'=>array(
             'modules'=>array(
              'gii'=>array(
@@ -35,10 +38,11 @@ options.
                  ),
              ),
         ),
+    ),
 ~~~    		
 
 4. Configure a cache in the main.php components section as the example shown below
-~~~
+~~~PHP
         'forceCache'=>array(
             'class'=>'system.caching.CDbCache',
             'connectionID'=>'db',
