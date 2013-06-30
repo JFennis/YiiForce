@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Force for Yii
 
 ...is a module for the Yii PHP framework allowing the user to generate Models and CRUD controllers and views for Force.com sObjects using the Force.com REST API.
@@ -45,6 +44,8 @@ options.
 
 5.) Navigate to the force module http://your-yii-site/index.php/force
 6.) Use the Force.com gii to generate the Model and CRUD Controllers and Views.
+
+#### [Download](https://github.com/JFennis/YiiForce)
 
 ##QUICK OVERVIEW:
 
