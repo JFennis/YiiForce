@@ -63,3 +63,4 @@ advanced query options.
 * You may need to update the gii ipFilters if you are not hosting your application locally, in which case you may see Error 403 - You are not allowed to access this page.
  You can go to http://www.whatismyip.com/ to get you current ip address.
 * After configuring your remote app in Force.com it might be worthwhile taking a coffee break. It can sometimes take a short time (approx 15 minutes) before the remote app is available for oauth and callback.
+* In the main.php config file - uncomment the urlManager to enable URLs in path-format
