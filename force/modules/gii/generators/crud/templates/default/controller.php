@@ -232,7 +232,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
             $modelName = $model->schema->getObjectMapping($child['childSObject']);
             if($modelName != null){
                 $valuestring .= CHtml::link("[".$child['childSObject']."] - ".$child['field'], array(
-                                        $modelName."/admin", 'field'=>$child['field'], 'value'=>$model->Id))."    (cascade delete = ". var_export($child['cascadeDelete'],true).")<br/>";
+                                        strtolower($modelName)."/admin", 'field'=>$child['field'], 'value'=>$model->Id))."    (cascade delete = ". var_export($child['cascadeDelete'],true).")<br/>";
             }
             else
                 $valuestring .= "[".$child['childSObject']."] - ".$child['field']."    (cascade delete = ". var_export($child['cascadeDelete'],true).")  (controller not generated)<br/>";
