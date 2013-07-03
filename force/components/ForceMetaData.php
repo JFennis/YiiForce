@@ -73,6 +73,10 @@ class ForceMetaData extends CComponent
         return $this->fields[$field][$property];
     }
 
+    /**
+     * Returns the object's metadata in array format suitable for CTreeView
+     * @return array for CTreeView
+     */
     public function getTreeView()
     {
 	    $dataTree=array(
@@ -84,6 +88,12 @@ class ForceMetaData extends CComponent
         return $dataTree;
     }
 
+    /**
+     * Recursive function to create the child nodes of metadata
+     * @param $nodes(array) the array of data to convert to tree nodes
+     * @param $nodeId(string) the name of the array passed for processing
+     * @return array of tree nodes
+     */
     private function getTreeChildren($nodes, $nodeId)
     {
         $children=array();
@@ -93,6 +103,8 @@ class ForceMetaData extends CComponent
                 $text = $node['name'];
             else if ($nodeId === 'childRelationships')
                 $text = $node['childSObject']." -> ".$node['field'];
+            else if ($nodeId === 'picklistValues')
+                $text = $node['label'];
             else
                 $text = $index;
 
