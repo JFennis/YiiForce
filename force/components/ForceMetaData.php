@@ -109,7 +109,7 @@ class ForceMetaData extends CComponent
                 $text = $index;
 
             if(!is_array($node))
-                $children[] = array('text'=>$index." = ".$node);
+                $children[] = array('text'=>$index." = ".CPropertyValue::ensureString($node));
             else
                 $children[] = array('text'=>$text, 'children'=>$this->getTreeChildren($node, $index));
         }
