@@ -73,5 +73,35 @@ class ForceMetaData extends CComponent
         return $this->fields[$field][$property];
     }
 
+    public function getTreeView()
+    {
+	    $dataTree=array(
+		    array(
+			    'text'=>$this->objectName,
+			    'children'=>$this->getTreeChildren($this->objectSchema, 'root'),
+		    )
+	    );
+        return $dataTree;
+    }
+
+    private function getTreeChildren($nodes, $nodeId)
+    {
+        $children=array();
+        foreach($nodes as $index=>$node){
+
+            if($nodeId === 'fields')
+                $text = $node['name'];
+            else if ($nodeId === 'childRelationships')
+                $text = $node['childSObject']." -> ".$node['field'];
+            else
+                $text = $index;
+
+            if(!is_array($node))
+                $children[] = array('text'=>$index." = ".$node);
+            else
+                $children[] = array('text'=>$text, 'children'=>$this->getTreeChildren($node, $index));
+        }
+        return $children;
+    }
 }
 ?>

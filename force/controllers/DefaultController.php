@@ -74,21 +74,9 @@ class DefaultController extends Controller
 		$this->render('test2',array());
 	}
 
-    public function getForceControllers()
+    public function getTreeView()
     {
-		$path = Yii::getPathOfAlias('force.controllers');
-		$names = scandir($path);
-
-        $controllers = array();
-		foreach($names as $name)
-		{
-            $pos = strpos($name, 'Controller', 1);
-		    if($pos > 0){
-		        $name = substr($name, 0, $pos);
-                if($name!='Login' && $name!='Default')
-                $controllers[] = strtolower($name); 
-		    }      
-        }
-		return $controllers;        
+        $conn = Yii::app()->getModule('force')->forceConnection;
+        return $conn->getSchema()->getTreeView();
     }
 }

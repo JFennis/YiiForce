@@ -15,9 +15,15 @@ $this->menu=array(
 
 <h1>Force.com sObject Manager</h1>
 
-<h2>Available Controllers</h2>
+<h2>Available Objects</h2>
 
-<?php foreach($this->getForceControllers() as $controller) { ?> 
-    <?php echo CHtml::link(CHtml::encode($controller), array('/force/'.$controller));?> <br/>
-<?php } ?>
-
+<?php 
+$this->widget('CTreeView',array(
+    'data'=>$this->getTreeView(),
+    'animated'=>'fast', 
+    'collapsed'=>'true',
+    'htmlOptions'=>array(
+         'class'=>'treeview-blue',
+         ),
+     ));
+?> 

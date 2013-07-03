@@ -57,6 +57,30 @@ class ForceSchema
         return array_keys($this->_objects);
     }
 
+    /**
+     * Returns a treeview of generated sObject models with metadata for each oject
+     * @return array of sObject names index=>objectName
+     */
+    public function getTreeView()
+    {
+ 		$path = Yii::getPathOfAlias('force.models');
+		$names = scandir($path);
+
+        $models = array();
+		foreach($names as $name)
+		{
+            $pos = strpos($name, '.php', 1);
+		    if($pos > 0){
+		        $name = substr($name, 0, $pos);
+                $object = new $name;
+                $treeView = $object->metaData->getTreeView();
+                $link = CHtml::link(CHtml::encode($name), array('/force/'.strtolower($name)));
+                $models[] = array('text'=>$link, 'children'=>$treeView ); 
+		    }      
+        }
+		return $models;               
+    }
+
    //Manage Yii model name mapping to force objects
 
     /**
