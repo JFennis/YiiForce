@@ -1,6 +1,6 @@
 #Yii Force
 
-...is a module for the Yii PHP framework that allows the user to generate Models and CRUD Controllers/Views for Force.com sObjects. CRUD operations utilise the Force.com REST API, and a
+..is a module for the Yii PHP framework that allows the user to generate Models and CRUD Controllers/Views for Force.com sObjects. CRUD operations utilise the Force.com REST API, and a
 cache should be configured to prevent excessive API calls (see Install instructions below).
 
 ##Note:
