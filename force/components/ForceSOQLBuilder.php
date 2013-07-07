@@ -208,17 +208,11 @@ class ForceSOQLBuilder extends CComponent
                     $value = " '".$value."' ";
                     break;
                 case 'datetime':
-                yii::trace('tag '. $tag . ' value ' . $value . ' SQL '.$sql, 'info');
                     if(strlen($value)>10)
                         $value = date_format(DateTime::createFromFormat('Y-m-d H:i:s', $value, new DateTimeZone('UTC')), 'c');
-                    else
-                        $value = date_format(DateTime::createFromFormat('Y-m-d', $value, new DateTimeZone('UTC')), 'c');
                     break;
                 case 'date':
-                    if(strlen($value)>10)
-                        $value = date_format(DateTime::createFromFormat('Y-m-d H:i:s', $value, new DateTimeZone('UTC')), 'c');
-                    else
-                        $value = date_format(DateTime::createFromFormat('Y-m-d', $value, new DateTimeZone('UTC')), 'c');
+                    //$value = date_format(DateTime::createFromFormat('Y-m-d H:i:s', $value, new DateTimeZone('UTC')), 'c');
                     break;
                 case 'time':
                     $value = date_format(DateTime::createFromFormat('H:i:s', $value, new DateTimeZone('UTC')), 'c');
