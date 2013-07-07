@@ -182,7 +182,7 @@ abstract class ForceObject extends CModel
             }
         }
 
-       if($this->metaData->getFieldProperty($column,'nillable'))
+       //if($this->metaData->getFieldProperty($column,'nillable'))
             $references = array_merge(array(null=>' '), $references);
 
         return $references;
