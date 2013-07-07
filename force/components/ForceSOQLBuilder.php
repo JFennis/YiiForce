@@ -224,7 +224,7 @@ class ForceSOQLBuilder extends CComponent
                     $value = date_format(DateTime::createFromFormat('H:i:s', $value, new DateTimeZone('UTC')), 'c');
                     break;
             }
-            $query = str_replace($tag, $value, $sql);
+            $query = str_replace($tag, $value, $query);
         }
         return $query;
     }
