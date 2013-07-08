@@ -98,8 +98,10 @@ class ForceSchema
 		{
             if(($pos = strripos($file,'.php')) > 0){
                 $objectName = substr($file,0,$pos);
-                $object = new $objectName;
-                $mapping[get_class($object)] = $object->sObject;
+                if(class_exists($objectName)){
+                    $object = new $objectName;
+                    $mapping[get_class($object)] = $object->sObject;                   
+                }
             }
 		}        
         $this->_modelMappings = $mapping;
