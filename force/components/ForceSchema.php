@@ -72,10 +72,12 @@ class ForceSchema
             $pos = strpos($name, '.php', 1);
 		    if($pos > 0){
 		        $name = substr($name, 0, $pos);
-                $object = new $name;
-                $treeView = $object->metaData->getTreeView();
-                $link = CHtml::link(CHtml::encode($name), array('/force/'.strtolower($name)));
-                $models[] = array('text'=>$link, 'children'=>$treeView ); 
+                if(class_exists($name)){
+                   $object = new $name;
+                   $treeView = $object->metaData->getTreeView();
+                   $link = CHtml::link(CHtml::encode($name), array('/force/'.strtolower($name)));
+                   $models[] = array('text'=>$link, 'children'=>$treeView );                     
+                }
 		    }      
         }
 		return $models;               
